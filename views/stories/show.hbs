@@ -1,0 +1,31 @@
+<div class="container">
+   
+
+     <div class="card text-white bg-dark mx-auto my-4" style="max-width: 18rem;">
+            <img src="{{story.user.image}}" class="card-img-top border border-white  mx-auto mt-1"
+                style="max-width: 30%;border-radius:50px" alt="{{story.user.displayName}}">
+            <p class="text-center" style="margin-bottom:0">{{story.user.displayName}}</p>
+
+            <div class="card-body " style="padding-top: 5px;">
+
+
+                <a href="/stories/user/{{story.user._id}}" class="btn btn-info btn-sm" style="display: block;margin:auto;">Full Profile</a>
+
+
+
+            </div>
+        </div>
+        <div class="card col-11 mx-auto">
+
+            <div class="card-body">
+                <h5 class="card-title">
+                    <h1>{{story.title}}</h1>
+                </h5>
+                <p class="card-text">{{story.body}}</p>
+
+            </div>
+        </div>
+
+      
+    
+</div>    

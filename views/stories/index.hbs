@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <h1 class="text-center my-4">Stories</h1>
+    <div class="d-flex p-2 bd-highlight justify-content-center align-items-center flex-wrap">
+        {{#each stories}}
+        <div class="">
+
+        <div class="card text-white bg-dark mb-3 mx-3 " style="width: 18rem;">
+            <img src="{{user.image}}" class="card-img-top border border-white  mx-auto mt-1" style="max-width: 30%;border-radius:50px" alt="{{displayName}}">
+            <p class="text-center" style="margin-bottom:0">{{user.firstName}}</p>
+
+            <div class="card-body " style="padding-top: 5px;">
+                <h5 class="card-title text-center">{{title}}</h5>
+                <p class="card-text text-sm">{{stripTags (truncate body 50)}}</p>
+                <a href="/stories/{{_id}}" class="btn btn-info btn-sm">Read More</a>
+                <a href="/stories/user/{{user._id}}" class="btn btn-info btn-sm">Full Profile</a>
+                
+                <button class="btn btn-success btn-sm" style="padding:0;">{{{editIcon user ../user _id}}}</button>
+               
+            </div>
+        </div>
+        
+        </div>
+
+
+
+        {{else}}
+        <p>No stories to display</p>
+
+        {{/each}}
+    </div>
+</div>

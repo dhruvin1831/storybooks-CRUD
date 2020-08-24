@@ -1,0 +1,27 @@
+<div class="container mt-4">
+    <h4>Edit Story</h4>
+    <form action="/stories/{{story._id}}" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input required type="text" class="form-control col-6" id="title" name="title" value="{{story.title}}" aria-describedby="title-help">
+            <small id="title-help" class="form-text text-muted">Hey! Everyone loves short and sweet titles</small>
+        </div>
+        <select class="custom-select mb-4 d-block" name="status" style="max-width: 200px">
+            {{#select story.status}}
+            <option style="max-width: 200px;" value="public" selected>Public</option>
+            <option style="max-width: 200px;" value="private">Private</option>
+            {{/select}}
+        </select>
+
+
+        <div class="form-group">
+            <label for="editor">Example textarea</label>
+            <textarea class="form-control" id="txtEditor" name="body" rows="3">{{story.body}}</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a class="btn btn-warning" href="/dashboard" role="button">Clear</a>
+
+    </form>
+</div>
